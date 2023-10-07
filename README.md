@@ -51,15 +51,15 @@ written with rusty 💛️💙️ by Tanque
 - [@TheShooter89](https://www.github.com/TheShooter89)
 
 
-## `cluexis` Stands With Ukraine 🇺🇦️
+## `cluexis-web` Stands With Ukraine 🇺🇦️
 
     "Freedom doesn't come cheap"
 
-`cluexis` stands with people of Ukraine in their fight against the brutal russian aggression and unrightful occupation of their homeland
+`cluexis-web` stands with people of Ukraine in their fight against the brutal russian aggression and unrightful occupation of their homeland
 
-`cluexis` stands with people of Ukraine in their fight for **Freedom**, for **Peace**, for **Self-Determination**, for **Happiness**
+`cluexis-web` stands with people of Ukraine in their fight for **Freedom**, for **Peace**, for **Self-Determination**, for **Happiness**
 
-`cluexis` stands with this generation of young ukrainians robbed away of their youth by the war, who will have to find the strength to get up once again and rebuild from the rubbles
+`cluexis-web` stands with this generation of young ukrainians robbed away of their youth by the war, who will have to find the strength to get up once again and rebuild from the rubbles
 
 ####
 
