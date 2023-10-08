@@ -3,3 +3,11 @@ body {
   height: 100vh;
   overflow: hidden;
 }
+
+.cw-navbar {
+  background-color: #255C99;
+}
+
+.cw-navbar-apptitle {
+  color: #FFD500
+}
