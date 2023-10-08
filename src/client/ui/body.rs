@@ -4,7 +4,7 @@ use serde::{Deserialize, Serialize};
 
 use html_to_string_macro::html;
 
-use crate::client::ui::{Component, Home, Navbar};
+use crate::client::ui::{Component, Dashboard, Home, Navbar};
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct Body {}
@@ -14,7 +14,7 @@ impl Component for Body {
         let result = html!(
             <body class="has-navbar-fixed-top">
                 {Navbar::new().render()}
-                {Home::new().render()}
+                {Dashboard::new().render()}
             </body>
         );
 
