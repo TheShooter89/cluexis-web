@@ -4,7 +4,7 @@ use serde::{Deserialize, Serialize};
 
 use html_to_string_macro::html;
 
-use crate::client::ui::Component;
+use crate::client::ui::{ChatPanel, Component};
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct Dashboard {}
@@ -12,11 +12,10 @@ pub struct Dashboard {}
 impl Component for Dashboard {
     fn render(&self) -> String {
         let result = html!(
-            <section class="section is-small p-4">
+            <section class="section p-4 cw-dashboard-container">
                 <section class="columns">
                     <div class="column is-one-fifth">
-                        <h1 class="title">"Hello actix webserver!"</h1>
-                        <h2 class="subtitle">"actix-web + htmx + rusqlite = <3"</h2>
+                        {ChatPanel::new().render()}
                     </div>
 
                     <div class="column">

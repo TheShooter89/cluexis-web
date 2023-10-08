@@ -21,6 +21,7 @@ impl Component for Head {
                 <link href="https://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet" />
                 <link href="https://fonts.googleapis.com/css?family=Unica+One" rel="stylesheet" />
                 <link href="static/bulma.min.css" rel="stylesheet" />
+                <link href="static/css/font-awesome.min.css" rel="stylesheet" />
                 <link href="static/custom_styles.css" rel="stylesheet" />
                 <script src="https://unpkg.com/htmx.org@1.9.5" integrity="sha384-xcuj3WpfgjlKF+FXhSQFQ0ZNr39ln+hwjN3npfM9VBnUskLolQAcN80McRIVOPuO" crossorigin="anonymous"></script>
             </head>

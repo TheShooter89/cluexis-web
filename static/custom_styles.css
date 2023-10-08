@@ -11,3 +11,7 @@ body {
 .cw-navbar-apptitle {
   color: #FFD500
 }
+
+.cw-dashboard-container {
+  height: 100%;
+}

@@ -1,4 +1,5 @@
 mod body;
+mod chat_panel;
 mod component;
 mod dashboard;
 mod head;
@@ -7,6 +8,7 @@ mod navbar;
 mod page;
 
 pub use body::Body;
+pub use chat_panel::ChatPanel;
 pub use component::Component;
 pub use dashboard::Dashboard;
 pub use head::Head;
