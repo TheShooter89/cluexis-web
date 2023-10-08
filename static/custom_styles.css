@@ -3,28 +3,3 @@ body {
   height: 100vh;
   overflow: hidden;
 }
- 
-.qd-body-section {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.qd-home-dashboard {
-  background-color: red;
-}
-
-.qd-home-pinboard {
-  max-height: 25%;
-  background-color: #ede7e3;
-  overflow: visible;
-}
-
-.qd-home-pinboard-pinningbox {
-  overflow-y: auto;
-}
-
-.qd-unsearch {
-  background-color: green;
-}

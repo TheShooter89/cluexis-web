@@ -1,4 +1,16 @@
+use actix_files as fs;
+use actix_web::{get, post, web, App, Error, HttpResponse, HttpServer, Responder};
+
+use html_to_string_macro::html;
+
 mod globals;
+
+mod client;
+mod datalayer;
+mod loader;
+mod server;
+
+use server::Server;
 
 fn app_info() {
     println!("#################################################################");
@@ -14,7 +26,10 @@ fn app_info() {
     println!("#################################################################");
 }
 
-fn main() {
+#[actix_web::main]
+async fn main() -> std::io::Result<()> {
     println!("Hello, develop!\n");
     app_info();
+    let app_server = Server::new();
+    app_server.listen().await
 }
