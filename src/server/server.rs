@@ -17,6 +17,11 @@ impl Server {
     }
 
     pub async fn listen(&self) -> std::io::Result<()> {
+        println!(
+            "webui server running at {:?}:{:?}",
+            globals::HOST,
+            globals::PORT
+        );
         HttpServer::new(|| {
             App::new()
                 .service(
