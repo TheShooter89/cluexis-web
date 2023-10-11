@@ -6,6 +6,7 @@ mod head;
 mod home;
 mod navbar;
 mod page;
+mod title_strip;
 
 pub use body::Body;
 pub use chat_panel::ChatPanel;
@@ -15,3 +16,4 @@ pub use head::Head;
 pub use home::Home;
 pub use navbar::Navbar;
 pub use page::Page;
+pub use title_strip::TitleStrip;

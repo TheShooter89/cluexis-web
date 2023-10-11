@@ -15,3 +15,13 @@ body {
 .cw-dashboard-container {
   height: 100%;
 }
+
+.cw-titlestrip {
+  /*background-color: #B3001B;*/
+  background-color: #FFD500;
+}
+
+.cw-titlestrip-titles {
+  color: white;
+  text-shadow: 1px 1px 4px #7F7F7F;
+}

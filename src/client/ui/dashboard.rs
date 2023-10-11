@@ -4,7 +4,7 @@ use serde::{Deserialize, Serialize};
 
 use html_to_string_macro::html;
 
-use crate::client::ui::{ChatPanel, Component};
+use crate::client::ui::{ChatPanel, Component, TitleStrip};
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct Dashboard {}
@@ -19,13 +19,11 @@ impl Component for Dashboard {
                     </div>
 
                     <div class="column">
-                        <h1 class="title">"Hello actix webserver!"</h1>
-                        <h2 class="subtitle">"actix-web + htmx + rusqlite = <3"</h2>
+                        {TitleStrip::new().add("Andrea").add("Carla").render()}
                     </div>
 
                     <div class="column is-one-quarter">
-                        <h1 class="title">"Hello actix webserver!"</h1>
-                        <h2 class="subtitle">"actix-web + htmx + rusqlite = <3"</h2>
+                        {TitleStrip::new().add("statistics").render()}
                     </div>
                 </section>
             </section>
