@@ -7,7 +7,8 @@ use serde::{Deserialize, Serialize};
 use html_to_string_macro::html;
 
 use crate::client::ui::{
-    ChatPanel, Component, StatisticsBox, StatisticsBoxData, StatisticsBoxDataGroup, TitleStrip,
+    ChatPanel, Component, StatisticsBox, StatisticsBoxData, StatisticsBoxDataGroup,
+    StatisticsManager, TitleStrip,
 };
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
@@ -15,10 +16,9 @@ pub struct Dashboard {}
 
 impl Component for Dashboard {
     fn render(&self) -> String {
-        let mut stat_box = StatisticsBoxDataGroup {
-            name: "Aggregate".to_string(),
-            data: Vec::new(),
-        };
+        let mut stat_box = StatisticsBoxDataGroup::new();
+        stat_box.name("Aggregate");
+
         stat_box.data.push(StatisticsBoxData {
             label: "Total days:".to_string(),
             value: "217".to_string(),
@@ -33,6 +33,20 @@ impl Component for Dashboard {
         });
         println!("stat_box: {:?}", stat_box);
 
+        let mut another_box = StatisticsBoxDataGroup::new();
+        another_box.data.push(StatisticsBoxData {
+            label: "Average message/day:".to_string(),
+            value: "12.7(9.23)".to_string(),
+        });
+        another_box.data.push(StatisticsBoxData {
+            label: "MAX messages in a single day:".to_string(),
+            value: "37(22)".to_string(),
+        });
+        another_box.data.push(StatisticsBoxData {
+            label: "MIN messages in a single day:".to_string(),
+            value: "1(0.75)".to_string(),
+        });
+
         let result = html!(
             <section class="section p-4 cw-dashboard-container">
                 <section class="columns">
@@ -46,7 +60,8 @@ impl Component for Dashboard {
 
                     <div class="column is-one-quarter">
                         {TitleStrip::new().add("statistics").render()}
-                        {StatisticsBox::new().group(stat_box).render()}
+                        {StatisticsBox::new("Totals").group(stat_box).group(another_box).render()}
+                        {StatisticsManager::new().render()}
                     </div>
                 </section>
             </section>

@@ -10,6 +10,7 @@ use crate::client::ui::Component;
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct StatisticsBox {
+    name: String,
     data_groups: Vec<StatisticsBoxDataGroup>,
 }
 
@@ -47,7 +48,7 @@ impl Component for StatisticsBox {
         let result = html!(
             <article class="message">
                 <header class="message-header">
-                    <p class="">"Totals"</p>
+                    <p class="">{self.name.clone()}</p>
                     <button class="delete" aria-label="delete"></button>
                 </header>
                 <section class="message-body">
@@ -61,8 +62,9 @@ impl Component for StatisticsBox {
 }
 
 impl StatisticsBox {
-    pub fn new() -> Self {
+    pub fn new(name: &str) -> Self {
         StatisticsBox {
+            name: name.to_string(),
             data_groups: Vec::new(),
         }
     }
@@ -77,6 +79,27 @@ impl StatisticsBox {
 pub struct StatisticsBoxDataGroup {
     pub name: String,
     pub data: Vec<StatisticsBoxData>,
+}
+
+impl StatisticsBoxDataGroup {
+    pub fn new() -> Self {
+        StatisticsBoxDataGroup {
+            name: "<br />".to_string(),
+            data: Vec::new(),
+        }
+    }
+
+    pub fn name(&mut self, name: &str) {
+        self.name = name.to_string();
+    }
+
+    // helper function to add a new StatisticsBoxData without directly instantiating it
+    pub fn add_data(&mut self, label: &str, value: &str) {
+        self.data.push(StatisticsBoxData {
+            label: label.to_string(),
+            value: value.to_string(),
+        });
+    }
 }
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
