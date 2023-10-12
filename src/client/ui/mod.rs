@@ -6,6 +6,7 @@ mod head;
 mod home;
 mod navbar;
 mod page;
+mod statistics_box;
 mod title_strip;
 
 pub use body::Body;
@@ -16,4 +17,5 @@ pub use head::Head;
 pub use home::Home;
 pub use navbar::Navbar;
 pub use page::Page;
+pub use statistics_box::{StatisticsBox, StatisticsBoxData, StatisticsBoxDataGroup};
 pub use title_strip::TitleStrip;
